@@ -13,10 +13,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+alias v="nvim"
+alias py="python3"
 alias ll="ls -al"
 alias llg="ls -al | grep "
-alias matlab2015="/opt/MATLAB/R2015a/bin/matlab"
-alias v="vim"
 alias c="clear"
 alias gpi="getpublic_ip"
 alias xfcd="xfce4-terminal $CD --hide-menubar --hide-scrollbar"
