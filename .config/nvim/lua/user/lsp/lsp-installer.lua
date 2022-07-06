@@ -31,7 +31,19 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", eslint_opts, opts)
   end
 
+  if server.name == "rust-analyzer" then
+    local rust_opts = require("user.lsp.settings.rust-analyzer")
+
+    local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
+    if not rust_tools_status_ok then
+      return
+    end
+    rust_tools.setup(rust_opts)
+    goto continue --break early, otherwise we call setup twice
+  end
+
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	server:setup(opts)
+  ::continue::
 end)

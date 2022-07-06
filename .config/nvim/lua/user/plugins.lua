@@ -63,6 +63,9 @@ return packer.startup(function(use)
     use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
     --use "ellisonleao/gruvbox.nvim"
 
+    -- Extensions to built-in LSP, eg providing type inlay hints
+    use "nvim-lua/lsp_extensions.nvim"
+
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
@@ -81,9 +84,11 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use "simrat39/rust-tools.nvim" -- for handy rust settings
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
+    use "BurntSushi/ripgrep"
 
     -- Treesitter
     use {

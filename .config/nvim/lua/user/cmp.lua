@@ -104,7 +104,7 @@ cmp.setup {
         nvim_lsp = "[LSP]",
         nvim_lua = "[LUASNIP]",
         luasnip = "[Snippet]",
-        buffer = "[Buffer]",
+        buffer = "[File]",
         path = "[Path]",
       })[entry.source.name]
       return vim_item
@@ -125,7 +125,7 @@ cmp.setup {
     documentation = cmp.config.window.bordered() --border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

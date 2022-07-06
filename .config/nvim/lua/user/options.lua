@@ -38,9 +38,9 @@ local options = {
   showcmd=true,
   showmatch=true,
 
-  foldmethod=indent,
+  foldmethod="indent",
   tw=80,
-  fo=cq,
+  fo="cq",
   wm=0,
 }
 

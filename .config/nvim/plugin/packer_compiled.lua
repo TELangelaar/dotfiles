@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/thijme/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lsp_extensions.nvim"] = {
+    loaded = true,
+    path = "/home/thijme/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim",
+    url = "https://github.com/nvim-lua/lsp_extensions.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/thijme/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -223,6 +228,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thijme/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ripgrep = {
+    loaded = true,
+    path = "/home/thijme/.local/share/nvim/site/pack/packer/start/ripgrep",
+    url = "https://github.com/BurntSushi/ripgrep"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/thijme/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
