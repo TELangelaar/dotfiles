@@ -3,6 +3,14 @@ if not status_ok then
   return
 end
 
+local status_ok, installer = pcall(require, "nvim-treesitter.install")
+if not status_ok then
+  return
+end
+
+installer.prefer_git = false
+installer.compilers = { "clang" }
+
 configs.setup {
   ensure_installed = "all",
   sync_install = false,

@@ -1,9 +1,10 @@
 require "user.options"
-require "user.autocommands"
+--require "user.autocommands"
 require "user.keymaps"
 require "user.plugins"
-require "user.cmp"
+--require "user.cmp"
 require "user.colorscheme"
-require "user.lsp"
+--require "user.lsp"
 require "user.telescope"
 require "user.treesitter"
+print("hello")
