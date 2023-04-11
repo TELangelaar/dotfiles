@@ -39,7 +39,7 @@ local options = {
   showmatch=true,
 
   foldmethod="indent",
-  tw=80,
+  tw=120,
   fo="cq",
   wm=0,
 }

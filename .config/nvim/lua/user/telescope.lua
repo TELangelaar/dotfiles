@@ -3,8 +3,15 @@ if not status_ok then
   return
 end
 
-local actions = require "telescope.actions"
+local builtin = require "telescope.builtin"
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function()
+  builtin.grep_string({ search = vim.fn.input("Grep > ") });
+end)
 
+
+local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
@@ -44,7 +51,7 @@ telescope.setup {
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
 
-      n = {
+     n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,

@@ -87,7 +87,10 @@ return packer.startup(function(use)
     use "simrat39/rust-tools.nvim" -- for handy rust settings
 
     -- Telescope
-    use "nvim-telescope/telescope.nvim"
+    use {
+      "nvim-telescope/telescope.nvim",
+      requires = {{ "nvim-lua/plenary.nvim" }}
+    }
     use "BurntSushi/ripgrep"
 
     -- Treesitter

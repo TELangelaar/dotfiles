@@ -32,6 +32,7 @@ keymap("n", "<leader>e", ":Lex 30<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-d>", ":bd<CR>", opts)
 
 -- Insert
 -- Press jk to go to normal mode
