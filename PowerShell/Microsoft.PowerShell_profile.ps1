@@ -1,7 +1,7 @@
-# oh-my-posh init pwsh | Invoke-Expression
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme jandedobbeleer
- 
+oh-my-posh init pwsh --config "$($HOME)\theme.omp.json" | Invoke-Expression
+#Import-Module oh-my-posh
+#Set-PoshPrompt -Theme jandedobbeleer
+
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion
