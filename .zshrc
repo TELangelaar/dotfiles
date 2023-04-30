@@ -26,4 +26,4 @@ test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/bre
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
-eval "$(oh-my-posh --init --shell zsh --config /mnt/c/Users/Desktop-TL/AppData/Local/oh-my-posh/themes/jandedobbeleer.omp.json)"
+eval "$(oh-my-posh --init --shell zsh --config ~/gitrepos/dotfiles/theme.omp.json)"
