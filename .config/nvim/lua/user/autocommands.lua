@@ -13,8 +13,8 @@ vim.cmd [[
     " Programming languages specific stuff
     augroup language_specifics
         " Rust
-        autocmd BufWritePost *.rs !rustfmt %
-        autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
+        " autocmd BufWritePost *.rs !rustfmt %
+        " autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
     augroup END
 
     " skeleton stuff
@@ -27,6 +27,6 @@ vim.cmd [[
 
     augroup vimrc_autocmds
         autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-        autocmd BufEnter * match OverLength /\%80v.*/
+        autocmd BufEnter * match OverLength /\%160v.*/
     augroup END
 ]]

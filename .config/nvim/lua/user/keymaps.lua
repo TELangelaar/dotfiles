@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 local keymap = vim.api.nvim_set_keymap
 
 -- Modes
@@ -32,15 +30,15 @@ keymap("n", "<leader>e", ":Lex 30<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-d>", ":bd<CR>", opts)
-
--- Insert
--- Press jk to go to normal mode
-keymap("i", "jk", "<ESC>", opts)
+keymap("n", "<S-d>", ":Bdelete<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+
+-- Insert
+-- Press jk to go to normal mode
+keymap("i", "jk", "<ESC>", opts)
 
 -- Visual
 -- Stay in indent mode
