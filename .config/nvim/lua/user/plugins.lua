@@ -21,39 +21,44 @@ end
 
 local plugins = {
   -- defaults
-  "nvim-lua/plenary.nvim",                      -- useful functions written by TJDeVries, used in a lot of packages
-  "windwp/nvim-autopairs",                      -- autoclose pairs
-  "numToStr/Comment.nvim",                      -- better commenting
-  "moll/vim-bbye",                              -- better buffer deletion
-  {"goolord/alpha-nvim", lazy = true},          -- nice start screen
-  {"folke/which-key.nvim", lazy = true},        -- shop keymaps
+  "nvim-lua/plenary.nvim",                 -- useful functions written by TJDeVries, used in a lot of packages
+  "windwp/nvim-autopairs",                 -- autoclose pairs
+  "numToStr/Comment.nvim",                 -- better commenting
+  "moll/vim-bbye",                         -- better buffer deletion
+  { "goolord/alpha-nvim",   lazy = true }, -- nice start screen
+  { "folke/which-key.nvim", lazy = true }, -- shop keymaps
 
   -- editor styling (tree, bufferline, lualine, etc etc)
   "nvim-tree/nvim-web-devicons",
-  {"nvim-tree/nvim-tree.lua", lazy = true, dependencies = {'nvim-tree/nvim-web-devicons'}},
-  {"akinsho/bufferline.nvim", version = "*", dependencies = {"nvim-tree/nvim-web-devicons"}},
-  { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons'}},
+  { "nvim-tree/nvim-tree.lua",   dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons" }
+  },
+  { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
 
   -- colorschemes
   "lunarvim/colorschemes",
 
   -- LSP
-  "williamboman/mason.nvim",              -- mason for LSP, DAP, Formatters etc
-  "williamboman/mason-lspconfig.nvim",    --bridges the gap between nvim-lspconfig and mason
-  "neovim/nvim-lspconfig",                -- enable LSP
+  "williamboman/mason.nvim",           -- mason for LSP, DAP, Formatters etc
+  "williamboman/mason-lspconfig.nvim", --bridges the gap between nvim-lspconfig and mason
+  "neovim/nvim-lspconfig",             -- enable LSP
 
   -- Autocompletions
-  "hrsh7th/nvim-cmp",                     -- The completion plugin
-  "hrsh7th/cmp-buffer",                   -- buffer completions
-  "hrsh7th/cmp-path",                     -- path completions
-  "hrsh7th/cmp-cmdline",                  -- cmdline completions
+  "hrsh7th/nvim-cmp",    -- The completion plugin
+  "hrsh7th/cmp-buffer",  -- buffer completions
+  "hrsh7th/cmp-path",    -- path completions
+  "hrsh7th/cmp-cmdline", -- cmdline completions
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-nvim-lua",
 
   -- snippets
-  "saadparwaiz1/cmp_luasnip",             -- snippet completions
-  "L3MON4D3/LuaSnip",                     --snippet engine
-  "rafamadriz/friendly-snippets",         -- a bunch of snippets to use
+  "saadparwaiz1/cmp_luasnip",     -- snippet completions
+  "L3MON4D3/LuaSnip",             --snippet engine
+  "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
   -- Treesitter
   "nvim-treesitter/nvim-treesitter",
@@ -66,3 +71,6 @@ require("user.plugins.whichkey-setup")
 require("user.plugins.bufferline-setup")
 require("user.plugins.lualine-setup")
 require("user.plugins.treesitter-setup")
+require("nvim-tree").setup {}
+require("user.plugins.nvimtree-setup")
+require("user.plugins.autopairs-setup")

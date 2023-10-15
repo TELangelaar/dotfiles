@@ -5,6 +5,10 @@ vim.cmd [[
         autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
     augroup END
 
+    augroup LspFormatting
+        autocmd BufWritePre * lua vim.lsp.buf.format()
+    augroup END
+
     " InsertEnter * norm zz --> Vim makes line that you edit middle of the screen
     autocmd InsertEnter * norm zz
     " BufwritePre* %s/\s\+$//e --> any trailing whitespaces on any line are removed
