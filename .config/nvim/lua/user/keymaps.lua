@@ -26,6 +26,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Open explorer
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- Open Terminal
+keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)

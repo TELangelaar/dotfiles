@@ -2,22 +2,27 @@ local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   return
 end
-
-local builtin = require "telescope.builtin"
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
-local actions = require "telescope.actions"
+-- Disable folding in Telescope's result window.
+vim.api.nvim_create_autocmd("FileType", { pattern = "TelescopeResults", command = [[setlocal nofoldenable]] })
+
+local actions = require("telescope.actions")
+
 telescope.setup {
   defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
 
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+
 
     mappings = {
       i = {
@@ -34,7 +39,7 @@ telescope.setup {
 
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
+        ["<C-y>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
         ["<C-u>"] = actions.preview_scrolling_up,
@@ -51,11 +56,11 @@ telescope.setup {
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
 
-     n = {
+      n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
+        ["<C-y>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
@@ -82,12 +87,12 @@ telescope.setup {
 
         ["?"] = actions.which_key,
       },
-    },
+    }
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
-    --   picker_config_key = value,
+    --   picker_config_ key = value,
     --   ...
     -- }
     -- Now the picker_config_key will be applied every time you call this
@@ -99,5 +104,7 @@ telescope.setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-  },
+  }
 }
+
+telescope.load_extension('fzf')

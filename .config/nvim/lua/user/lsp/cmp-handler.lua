@@ -1,6 +1,5 @@
 local status_ok, cmp = pcall(require, "cmp")
 if not status_ok then
-  print("cmp does not exist")
   return
 end
 
@@ -46,7 +45,13 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+
 cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
+  },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -90,6 +95,13 @@ cmp.setup {
       "s",
     }),
   },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -105,13 +117,6 @@ cmp.setup {
       })[entry.source.name]
       return vim_item
     end,
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "nvim_lua" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
