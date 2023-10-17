@@ -7,6 +7,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
@@ -26,6 +27,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<cr>', opts)
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<cr>', opts)
+  end
+})
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    -- For Testing
+    --vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg = "Purple" })
+    vim.api.nvim_set_hl(0, '@lsp.mod.readonly', { italic = true })
+
+    -- c# / dotnet
+    vim.api.nvim_set_hl(0, '@lsp.type.interface.cs', { fg = "#B5CEA8", })
+    vim.api.nvim_set_hl(0, '@lsp.type.class.cs', { fg = "#4EC9B0", })
+    vim.api.nvim_set_hl(0, '@lsp.type.fieldName.cs', { fg = "#D8DEE9" })
+    vim.api.nvim_set_hl(0, '@lsp.type.method.cs', { fg = "#DCDCAA" })
   end
 })
 

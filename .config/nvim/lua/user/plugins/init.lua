@@ -31,6 +31,7 @@ local plugins = {
   "moll/vim-bbye",                                   -- better buffer deletion
   { "kylechui/nvim-surround",  event = "VeryLazy" }, -- surround with brackets/accolades etc etc
   "windwp/nvim-autopairs",                           -- autoclose pairs
+  "norcalli/nvim-colorizer.lua",
 
   -- editor styling (tree, bufferline, lualine, etc etc)
   "nvim-tree/nvim-web-devicons",
@@ -85,11 +86,12 @@ lazy.setup(plugins, opts)
 require("user.plugins.whichkey-setup")
 require("user.plugins.nvimsurround-setup")
 require("user.plugins.comment-setup")
+require("user.plugins.toggleterm-setup")
+require("user.plugins.autopairs-setup")
 require("user.plugins.bufferline-setup")
 require("user.plugins.lualine-setup")
-require("user.plugins.treesitter-setup")
 require("user.plugins.nvimtree-setup")
-require("user.plugins.autopairs-setup")
-require("user.plugins.toggleterm-setup")
 require("user.plugins.alpha-setup")
 require("user.plugins.telescope-setup")
+require("user.plugins.treesitter-setup")
+require("user.plugins.color-themes.darkplus.lua.darkplus")
