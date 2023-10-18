@@ -17,14 +17,13 @@ local default_setup = function(server)
   lspconfig[server].setup({})
 end
 
-local status_ok, lsp_config = pcall(require, 'mason-lspconfig')
+local status_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
 if not status_ok then
   print("mason-lspconfig does not exist")
   return
 end
 
-lsp_config.setup({
-ensure_installed = {},
-handlers = { default_setup },
+mason_lspconfig.setup({
+  ensure_installed = {},
+  handlers = { default_setup },
 })
-
