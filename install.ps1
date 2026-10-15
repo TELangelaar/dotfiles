@@ -23,8 +23,6 @@ $WingetPackages = @(
     'Neovim.Neovim'
     'LLVM.LLVM'               # C compiler for nvim-treesitter
     'BurntSushi.ripgrep.MSVC' # telescope live grep
-    'astral-sh.uv'
-    'OpenJS.NodeJS.LTS'       # Claude Code hooks
     'Anthropic.ClaudeCode'
 )
 

@@ -18,6 +18,18 @@ Configs for PowerShell + Windows Terminal (Windows), zsh (Linux), oh-my-posh, Ne
 
 The install scripts are safe to re-run. Anything already at a target path is moved to `<name>.dotfiles-bak`.
 
+## Dev tools
+
+```powershell
+.\devtools.ps1   # Windows, via winget
+```
+
+```sh
+./devtools.sh    # Linux (Debian/Ubuntu), via apt and official installers
+```
+
+Installs Azure CLI, azd, Bicep, kubectl, kubelogin, Helm, k9s, kubectx/kubens, GitHub CLI, Docker (CLI on Windows, Engine on Linux), Atlassian CLI, .NET SDK 10 and 9 (with dotnet-ef, dotnet-coverage and hidi), Aspire CLI, Node.js LTS, uv, Rust, mkcert, SQLite, jq, yq, fzf, fd and bat. Safe to re-run: on Windows, winget upgrades what's already installed; on Linux, tools already on PATH are skipped.
+
 ## Remove
 
 ```powershell

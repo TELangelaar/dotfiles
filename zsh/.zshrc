@@ -24,6 +24,11 @@ alias xfcd="xfce4-terminal $CD --hide-menubar --hide-scrollbar"
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# User-level installs from devtools.sh
+test -d ~/.dotnet && export DOTNET_ROOT=~/.dotnet && path=(~/.dotnet ~/.dotnet/tools $path)
+test -d ~/.cargo/bin && path=(~/.cargo/bin $path)
+test -d ~/.aspire/bin && path=(~/.aspire/bin $path)
+path=(~/.local/bin $path)
 
 command -v oh-my-posh >/dev/null && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.json)"
 

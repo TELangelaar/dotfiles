@@ -18,7 +18,6 @@ install_packages() {
   sudo apt-get update
   sudo apt-get install -y zsh git neovim jq ripgrep curl unzip build-essential
   command -v oh-my-posh >/dev/null || curl -fsSL https://ohmyposh.dev/install.sh | bash -s
-  command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
   command -v claude >/dev/null || curl -fsSL https://claude.ai/install.sh | bash
   [ "$(basename "${SHELL:-}")" = zsh ] || echo "  run 'chsh -s $(command -v zsh)' to make zsh your login shell"
 }
