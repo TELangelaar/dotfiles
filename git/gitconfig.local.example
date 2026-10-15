@@ -1,0 +1,5 @@
+# Machine-specific git settings. Copied to ~/.gitconfig.local by the install script
+# and included from ~/.gitconfig. Never committed.
+#
+# [user]
+# 	email = someone@example.com

@@ -1,0 +1,6 @@
+# Machine-specific files live outside the repo; this is a safety net in case one gets copied in.
+*.local.ps1
+*.local.json
+.gitconfig.local
+.zshrc.local
+*.dotfiles-bak*

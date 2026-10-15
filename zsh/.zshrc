@@ -7,7 +7,7 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/thijme/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -23,7 +23,9 @@ alias xfcd="xfce4-terminal $CD --hide-menubar --hide-scrollbar"
 
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
-eval "$(oh-my-posh --init --shell zsh --config ~/gitrepos/dotfiles/theme.omp.json)"
+command -v oh-my-posh >/dev/null && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.json)"
+
+# Machine-specific settings (not in the dotfiles repo)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

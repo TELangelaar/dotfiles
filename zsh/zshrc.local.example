@@ -1,0 +1,2 @@
+# Machine-specific zsh settings. Copied to ~/.zshrc.local by install.sh and
+# sourced at the end of ~/.zshrc. Never committed.

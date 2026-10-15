@@ -1,0 +1,17 @@
+# Windows-only git settings, linked to ~/.config/git/os.gitconfig by install.ps1
+[core]
+	editor = \"C:/Windows/System32/notepad.exe\"
+[merge]
+	tool = kdiff3
+	guitool = kdiff3
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/bin/kdiff3.exe
+	keepBackup = false
+	keepTemporaries = false
+	cmd = \"\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+[diff]
+	tool = kdiff3
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/bin/kdiff3.exe
+	cmd = \"C:/Program Files/KDiff3/bin/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"

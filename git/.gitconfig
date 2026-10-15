@@ -1,0 +1,51 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Thijme Langelaar
+	email = thijme.langelaar@aceve.com
+[alias]
+	lg = lg1
+	lg1 = lg1-specific --all
+	lg2 = lg2-specific --all
+	lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold cyan)- %an%C(reset)%C(auto)%d%C(reset)'
+	lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold yellow)- %an%C(reset)'
+	cm = commit -m
+	aa = add .
+	f = fetch -p
+	last = log -1 --stat
+	oops = commit --amend --no-edit
+	reword = commit --amend
+	uncommit = reset --soft HEAD~1
+	remotes = branch -v -a
+	pf = push --force-with-lease
+	tb = commit --allow-empty -m "Trigger Build"
+[core]
+	whitespace = -trailing-space
+	autocrlf = input
+[color]
+	ui = auto
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[log]
+	abbrevCommit = true
+[merge]
+	conflictstyle = diff3
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
+	autosquash = false
+	updateRefs = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://github.com"]
+	username = TELangelaar
+[include]
+	# OS-specific settings, linked by install.ps1 / install.sh
+	path = ~/.config/git/os.gitconfig
+	# Machine-specific settings, not in the dotfiles repo
+	path = ~/.gitconfig.local
